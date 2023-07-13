@@ -24,8 +24,13 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="5" Grid.Column="1" Content="Create Task"/>
+        <Button Click="AddTodoButton_Click"    Width="150" Grid.Row="4" Grid.Column="1" Content="Create Task" Margin="18,10,212,0" Grid.RowSpan="2" BorderBrush="#FF50C82F"/>
+        <Button Click="ClearButton_Click" Width="150" Grid.Row="4" Content="Clear" Margin="208,10,22,0" Grid.RowSpan="2" Grid.Column="1" BorderBrush="#FFCA3820"/>
 
-        <TextBox Grid.Row="3" Grid.Column="1" Background="DimGray" Foreground="White" />
+        <TextBox x:Name="TodoInput" Grid.Row="3" Grid.Column="1" Background="#FF8A8989" Foreground="White" />
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto" Background="#FFC1C0C0">
+            <StackPanel x:Name="TodoList"></StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

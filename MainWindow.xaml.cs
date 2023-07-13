@@ -24,5 +24,33 @@ namespace TodoApp
         {
             InitializeComponent();
         }
+
+        private void AddTodoButton_Click(object sender, RoutedEventArgs e)
+        {
+            string todoText = TodoInput.Text;
+
+            if (!string.IsNullOrEmpty(todoText))
+            {
+                TextBlock todoItem = new TextBlock
+                {
+                    Text = todoText,
+                    Margin = new Thickness(10),
+                    Foreground = new SolidColorBrush(Colors.White),
+                    FontSize = 18,
+                    FontFamily = new FontFamily("Segoe UI")
+
+                };
+
+                TodoList.Children.Add(todoItem);
+
+                TodoInput.Clear();
+            }
+            
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            TodoList.Children.RemoveRange(0, TodoList.Children.Count);
+        }
     }
 }
